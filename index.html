@@ -146,7 +146,6 @@ select:focus{border-color:var(--border2)}
     <div class="progress-label" id="prog-label">완료 0%</div>
   </div>
 
-  <!-- 공유 ID 동기화 바 -->
   <div class="sync-bar">
     <span class="sync-label">🔗 공유 ID</span>
     <input type="text" id="share-id" placeholder="공유 ID 입력 또는 생성..." readonly>
@@ -179,7 +178,6 @@ select:focus{border-color:var(--border2)}
   <div class="todo-list" id="todo-list"></div>
 </div>
 
-<!-- Modal -->
 <div class="overlay" id="modal" onclick="overlayClick(event)">
   <div class="modal">
     <h2 id="modal-h">할 일 추가</h2>
@@ -215,6 +213,24 @@ select:focus{border-color:var(--border2)}
     </div>
   </div>
 </div>
+
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.12.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.12.0/firebase-analytics.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyAa80zSh4nWV1vNFcPfODUrZ8Wu005qkMk",
+    authDomain: "todolist-tr170.firebaseapp.com",
+    projectId: "todolist-tr170",
+    storageBucket: "todolist-tr170.firebasestorage.app",
+    messagingSenderId: "164831908667",
+    appId: "1:164831908667:web:474ab208c353eea3d09d1e",
+    measurementId: "G-PB0SRK0H82"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
 
 <script>
 // ─── State ───────────────────────────────────────────────
